@@ -1,0 +1,111 @@
+
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#101820">
+<title>CASIO 580VN X PRO</title>
+<link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+
+<div class="app">
+<header>
+  <div class="logo">fx</div>
+  <div>
+    <h1>CASIO 580VN X</h1>
+    <small>SCIENTIFIC CALCULATOR PRO</small>
+  </div>
+  <span class="online">● ONLINE</span>
+</header>
+
+<main>
+  <section class="screen">
+    <div class="screen-head">
+      <span>NATURAL DISPLAY</span>
+      <button id="modeBtn" onclick="toggleMode()">DEG</button>
+    </div>
+    <div id="expression">0</div>
+    <div id="result">0</div>
+    <small id="status">READY</small>
+  </section>
+
+  <section class="keypad">
+    <button class="fn" onclick="insert('sin(')">sin</button>
+    <button class="fn" onclick="insert('cos(')">cos</button>
+    <button class="fn" onclick="insert('tan(')">tan</button>
+    <button class="fn" onclick="insert('log(')">log</button>
+    <button class="fn" onclick="insert('ln(')">ln</button>
+
+    <button class="fn" onclick="insert('asin(')">sin⁻¹</button>
+    <button class="fn" onclick="insert('acos(')">cos⁻¹</button>
+    <button class="fn" onclick="insert('atan(')">tan⁻¹</button>
+    <button class="fn" onclick="insert('sqrt(')">√</button>
+    <button class="fn" onclick="insert('^2')">x²</button>
+
+    <button onclick="insert('7')">7</button>
+    <button onclick="insert('8')">8</button>
+    <button onclick="insert('9')">9</button>
+    <button class="op" onclick="insert('/')">÷</button>
+    <button class="danger" onclick="clearAll()">AC</button>
+
+    <button onclick="insert('4')">4</button>
+    <button onclick="insert('5')">5</button>
+    <button onclick="insert('6')">6</button>
+    <button class="op" onclick="insert('*')">×</button>
+    <button class="danger" onclick="backspace()">DEL</button>
+
+    <button onclick="insert('1')">1</button>
+    <button onclick="insert('2')">2</button>
+    <button onclick="insert('3')">3</button>
+    <button class="op" onclick="insert('-')">−</button>
+    <button onclick="insert('(')">(</button>
+
+    <button onclick="insert('0')">0</button>
+    <button onclick="insert('.')">.</button>
+    <button onclick="insert('pi')">π</button>
+    <button class="op" onclick="insert('+')">+</button>
+    <button onclick="insert(')')">)</button>
+
+    <button class="fn" onclick="insert('e')">e</button>
+    <button class="fn" onclick="insert('^')">xʸ</button>
+    <button class="fn" onclick="insert('%')">MOD</button>
+    <button class="fn" onclick="insert('factorial(')">n!</button>
+    <button class="equal" onclick="calculate()">=</button>
+  </section>
+
+  <section class="tools">
+    <h3>SCIENTIFIC TOOLS</h3>
+    <button onclick="openQuadratic()">Giải phương trình bậc 2</button>
+    <button onclick="showHistory()">Lịch sử tính toán</button>
+    <button onclick="clearHistory()">Xóa lịch sử</button>
+  </section>
+
+  <section id="quadratic" class="panel hidden">
+    <h3>AX² + BX + C = 0</h3>
+    <input id="qa" type="number" placeholder="Nhập A">
+    <input id="qb" type="number" placeholder="Nhập B">
+    <input id="qc" type="number" placeholder="Nhập C">
+    <button onclick="solveQuadratic()">GIẢI</button>
+    <p id="qresult"></p>
+    <button onclick="closeQuadratic()">ĐÓNG</button>
+  </section>
+
+  <section id="history" class="panel hidden">
+    <h3>LỊCH SỬ</h3>
+    <div id="historyList"></div>
+    <button onclick="closeHistory()">ĐÓNG</button>
+  </section>
+</main>
+
+<footer>
+  CASIO 580VN X PRO
+  <small>POWERED BY PYTHON FLASK</small>
+</footer>
+</div>
+
+<script src="/static/script.js"></script>
+</body>
+      </html>
+      
